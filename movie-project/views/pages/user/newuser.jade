@@ -1,0 +1,31 @@
+extend ../../layout
+
+block content
+    .container
+        .row
+            form.form-horizontal(method="post",action="/admin/control/newuser")
+                input(type="hidden", name="user[_id]", value="#{user._id}")
+                .form-group
+                    label.col-sm-2.control-label(for='inputName') 用户名
+                    .col-sm-10
+                        input#inputName.form-control(type='text',name="user[name]",value="#{user.name}")
+                .form-group
+                    label.col-sm-2.control-label(for='inputPaddword') 密码
+                    .col-sm-10
+                        input#inputPaddword.form-control(type='text',name='user[password]',value='#{user.password}')
+                .form-group
+                    label.col-sm-2.control-label(for='inputAge') 年龄
+                    .col-sm-10
+                        input#inputAge.form-control(type='text',name="user[age]",value="#{user.age}")
+                .form-group
+                    label.col-sm-2.control-label(for='inputAddr') 地址
+                    .col-sm-10
+                        input#inputAddr.form-control(type='text',name='user[addr]',value='#{user.addr}')
+                .form-group
+                    label.col-sm-2.control-label(for='inputGender') 性别
+                    .col-sm-10
+                        input#inputGender.form-control(type='text',name='user[gender]',value='#{user.gender}')
+                .col-sm-offset-2.col-sm-10
+                    button.btn.btn-primary(type="submit") 注册
+
+

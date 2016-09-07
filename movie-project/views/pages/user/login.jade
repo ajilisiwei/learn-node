@@ -1,0 +1,15 @@
+extend ../../layout
+block content
+    .container(style='{width:200px}')
+        form.form-horizontal(method='post',action='/admin/login')
+            .form-group
+                label.control-label.col-sm-2(for='inputUsername') 用户名
+                .col-sm-4
+                    input#inputUsername.form-control(type='text',name='user[name]',value='#{user.name}')
+            .form-group
+                label.control-label.col-sm-2(for='inputPassword') 密码
+                .col-sm-4
+                    input#inputPassword.form-control(type='password',name='user[password]',value='#{user.password}')
+            hr
+            .col-sm-10
+                button.btn.btn-primary.col-sm-offset-3.col-xs-2(type='submit') 登录
