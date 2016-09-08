@@ -11,6 +11,7 @@ var emptyUser={
 
 module.exports=function (app) {
 
+      //hello
      // 添加用户界面
     app.get('/admin/newuser',function (req,res) {
         res.render('./user/newuser',{title: '用户-用户添加页',user: emptyUser});
