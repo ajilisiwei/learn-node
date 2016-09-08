@@ -27,6 +27,8 @@ UserSchema.pre('save',function (next) {
     next();
 });
 
+
+
 UserSchema.statics= {
     fetch: function (cb) {
         return this
@@ -37,6 +39,16 @@ UserSchema.statics= {
     findById: function (id, cb) {
         return this
             .findOne({_id: id})
+            .exec(cb);
+    },
+    findByUserName:function (username,cb) {
+        return this
+            .findOne({name:username})
+            .exec(cb);
+    },
+    findByPassword:function (username,psd,cb) {
+        return this
+            .findOne([{name:username},{password:psd}])
             .exec(cb);
     }
 };
